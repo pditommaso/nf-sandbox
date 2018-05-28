@@ -1,5 +1,6 @@
 package model
 
+import io.micronaut.context.ApplicationContext
 import model.Book
 import model.BookDAO
 import org.grails.orm.hibernate.HibernateDatastore
@@ -12,11 +13,10 @@ import spock.lang.Specification
  */
 class BookTest extends Specification {
 
-    @Shared @AutoCleanup HibernateDatastore hibernateDatastore
+    @Shared @AutoCleanup ApplicationContext context =
+                        ApplicationContext.build().mainClass(BookTest).start()
 
-    void setupSpec() {
-        hibernateDatastore = new HibernateDatastore(Book)
-    }
+    @Shared HibernateDatastore hibernateDatastore = context.getBean(HibernateDatastore)
 
     def 'should save and retrieve a workflow run with service' () {
         given:

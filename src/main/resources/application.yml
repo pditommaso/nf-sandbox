@@ -17,8 +17,6 @@ dataSource:
     username: sa
     password:
 hibernate:
-    hbm2ddl:
-        auto: create
     cache:
         queries: false
         use_second_level_cache: true
