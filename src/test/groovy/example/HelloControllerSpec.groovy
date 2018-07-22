@@ -20,15 +20,13 @@ import io.micronaut.runtime.server.EmbeddedServer
 import spock.lang.AutoCleanup
 import spock.lang.Shared
 import spock.lang.Specification
-
 /**
  * @author graemerocher
  * @since 1.0
  */
 class HelloControllerSpec extends Specification {
 
-    @Shared @AutoCleanup EmbeddedServer embeddedServer =
-            ApplicationContext.run(EmbeddedServer)
+    @Shared @AutoCleanup EmbeddedServer embeddedServer = ApplicationContext.run(EmbeddedServer)
 
     void "test hello world"() {
         given:
@@ -37,4 +35,14 @@ class HelloControllerSpec extends Specification {
         expect:
         client.hello("Fred") == "Hello Fred!"
     }
+
+    def 'should load custom property from test config' () {
+        when:
+        def env = embeddedServer.applicationContext.getEnvironment()
+        then:
+        env.getActiveNames() == ['test'] as Set 
+        env.getProperty('foo.bar', String).get() == 'hello world!'
+    }
+
+
 }

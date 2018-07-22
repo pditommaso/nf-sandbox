@@ -1,6 +1,5 @@
 package ga4gh
 
-import client.WesClient
 import io.micronaut.context.ApplicationContext
 import io.micronaut.http.HttpRequest
 import io.micronaut.http.client.HttpClient
@@ -90,13 +89,5 @@ class WesControllerTest extends Specification {
     }
 
 
-    void "test wes get service-info with http client with context bean"() {
-        given:
-        WesClient client = embeddedServer.applicationContext.getBean(WesClient)
 
-        when:
-        def info = client.getServiceInfo()
-        then:
-        info.getEngineVersions().nextflow == '1.0'
-    }
 }

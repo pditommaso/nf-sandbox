@@ -16,6 +16,7 @@ dataSource:
     driverClassName: org.h2.Driver
     username: sa
     password:
+
 hibernate:
     cache:
         queries: false

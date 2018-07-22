@@ -14,6 +14,7 @@ import io.swagger.model.Ga4ghWesWorkflowRequest
 import io.swagger.model.Ga4ghWesWorkflowRunId
 import io.swagger.model.Ga4ghWesWorkflowStatus
 /**
+ * Implements WES API service
  *
  * @author Paolo Di Tommaso <paolo.ditommaso@gmail.com>
  */

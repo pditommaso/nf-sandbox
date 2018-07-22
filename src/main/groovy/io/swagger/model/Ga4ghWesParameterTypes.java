@@ -1,7 +1,6 @@
 package io.swagger.model;
 
 
-
 /**
  * Gets or Sets ga4gh_wes_parameter_types
  */

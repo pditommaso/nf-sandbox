@@ -13,10 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License. 
  */
-package ga4gh
+package web
 
 import io.micronaut.runtime.Micronaut
 
+/**
+ * Everything starts here
+ *
+ * @author Paolo Di Tommaso <paolo.ditommaso@gmail.com>
+ */
 class Application {
     static void main(String[] args) {
         Micronaut.run(getClass())

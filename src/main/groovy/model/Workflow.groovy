@@ -1,16 +1,16 @@
 package model
 
 import grails.gorm.annotation.Entity
-
 /**
+ * Basic workflow entity to manage
  *
  * @author Paolo Di Tommaso <paolo.ditommaso@gmail.com>
  */
 @Entity
-class Book {
+class Workflow {
 
     Integer id
 
-    String name
+    String workDir
 
 }
