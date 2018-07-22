@@ -1,0 +1,10 @@
+sudo: required
+language: groovy
+jdk:
+  - openjdk8
+env:
+  global:
+  - GRADLE_OPTS='-Dorg.gradle.daemon=false'
+script:
+  - ./gradlew check
+
