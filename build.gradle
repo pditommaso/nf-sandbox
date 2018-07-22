@@ -14,11 +14,12 @@ group "example"
 repositories {
     mavenLocal()
     mavenCentral()
+    maven { url "https://jcenter.bintray.com" }
 }
 
 dependencyManagement {
     imports {
-        mavenBom 'io.micronaut:bom:1.0.0-SNAPSHOT'
+        mavenBom 'io.micronaut:bom:1.0.0.M3'
     }
 }
 
