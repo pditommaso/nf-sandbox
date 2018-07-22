@@ -37,5 +37,3 @@ The fun part is at these files:
 ./src/test/groovy/ga4gh/WesControllerTest.groovy
 ```
 
-
-

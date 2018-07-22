@@ -1,0 +1,63 @@
+<html>
+<head>
+  <title>Vue.js Pet Depot</title>
+  <script src="https://unpkg.com/vue"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.js"></script>
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>{{ appname }}</h1>
+    </header>
+
+    <main>
+      <div v-if="showTable">
+        <table>
+          <tr>
+            <th>Workflow ID</th> <th>Status</th>
+          </tr>
+          <tr v-for="w in workflows">
+            <td>{{w.workflow_id}}</td> <td>{{w.state}}</td>
+          </tr>
+        </table>
+      </div>
+
+      <div v-else>
+        (no data to show)
+      </div>
+
+    </main><!--end of main-->
+  </div>
+
+  <script type="text/javascript">
+  var webstore = new Vue({
+      el: '#app',
+      data: {
+        appname: "GA4GH Sandbox",
+
+        workflows: []
+      },
+
+      created: function() {
+        axios.get('http://localhost:8080/ga4gh/wes/v1/workflows?pageSize=10&pageToken=0&keyValueSearch=')
+          .then((response) => {
+            this.workflows=response.data.workflows;
+          });
+      },
+      
+      methods: {
+
+      },
+      computed: {
+        showTable() {
+            return this.workflows!=null && this.workflows.length > 0;
+        }
+      },
+      filters: {
+        
+      }
+  });
+
+  </script>
+</body>
+</html>

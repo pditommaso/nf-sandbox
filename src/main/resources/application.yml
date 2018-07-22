@@ -1,13 +1,12 @@
 micronaut:
   server:
     port: 8080
-
-router:
-    static:
-        resources:
-            enabled: true
-            mapping: /static/**
-            paths: classpath:public
+  router:
+      static:
+          resources:
+              enabled: true
+              mapping: /static/**
+              paths: classpath:public
 
 dataSource:
     pooled: true

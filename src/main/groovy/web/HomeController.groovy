@@ -16,7 +16,13 @@ class HomeController {
     @Get("/")
     @Produces(MediaType.TEXT_HTML)
     String index() {
-        "<html><body>Hello world!</body></html>"
+        """
+        <html><body>
+        <h1>GA4GH Sandbox</h1>
+        <li><a href='/static/w-list.html'>List workflow</a></li>  
+        </body></html>
+        """
+        .stripIndent()
     }
 
 }

@@ -42,4 +42,5 @@ interface WesClient {
 
     @Delete("/workflows/{workflowId}")
     Ga4ghWesWorkflowRunId cancelJob(String workflowId)
+
 }
