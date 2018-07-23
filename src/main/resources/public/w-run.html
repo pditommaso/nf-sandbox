@@ -1,0 +1,78 @@
+<html>
+<head>
+  <title>Workflow run</title>
+  <script src="https://unpkg.com/vue"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.js"></script>
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>Workflow run</h1>
+    </header>
+
+    <main>
+      <form id="signup-form" @submit.prevent="processForm">
+        <div>
+        <textarea v-model="form.workflowDescriptor" placeholder="workflow descriptor"> </textarea>
+        </div>
+
+        <div>
+        <textarea v-model="form.workflowParams" placeholder="workflow params"> </textarea>
+        </div>
+
+        <div>
+        <input v-model="form.workflowType" placeholder="workflow type">
+        </div>
+
+        <div>
+        <input v-model="form.workflowTypeVersion" placeholder="workflow type version">
+        </div>
+
+        <div>
+        <textarea v-model="form.keyValues" placeholder="key values" ></textarea>
+        </div>
+
+
+        <div>
+          <button type="submit" >Submit</button>
+        </div>
+      </form>
+
+    </main>
+  </div>
+
+  <script type="text/javascript">
+  var webstore = new Vue({
+      el: '#app',
+      data: {
+        form: { }
+      },
+
+      created: function() {
+
+      },
+      
+      methods: {
+        processForm: function() {
+
+          axios.post('/ga4gh/wes/v1/workflows', this.form)
+            .then(function (response) {
+              console.log(response);
+            })
+            .catch(function (error) {
+              alert(error);
+            });
+
+        }
+      },
+      computed: {
+
+      },
+      filters: {
+        
+      }
+  });
+
+  </script>
+</body>
+</html>
