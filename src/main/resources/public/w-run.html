@@ -13,23 +13,23 @@
     <main>
       <form id="signup-form" @submit.prevent="processForm">
         <div>
-        <textarea v-model="form.workflowDescriptor" placeholder="workflow descriptor"> </textarea>
+        <textarea v-model="form.workflow_descriptor" placeholder="workflow descriptor"> </textarea>
         </div>
 
         <div>
-        <textarea v-model="form.workflowParams" placeholder="workflow params"> </textarea>
+        <textarea v-model="form.workflow_params" placeholder="workflow params"> </textarea>
         </div>
 
         <div>
-        <input v-model="form.workflowType" placeholder="workflow type">
+        <input v-model="form.workflow_type" placeholder="workflow type">
         </div>
 
         <div>
-        <input v-model="form.workflowTypeVersion" placeholder="workflow type version">
+        <input v-model="form.workflow_type_version" placeholder="workflow type version">
         </div>
 
         <div>
-        <textarea v-model="form.keyValues" placeholder="key values" ></textarea>
+        key values must be a nested object
         </div>
 
 
@@ -54,8 +54,11 @@
       
       methods: {
         processForm: function() {
-
-          axios.post('/ga4gh/wes/v1/workflows', this.form)
+          let url = '/ga4gh/wes/v1/workflows';
+          let cfg = { headers: {
+                          'Content-Type': 'application/json',
+                      }}
+          axios.post(url, this.form, cfg)
             .then(function (response) {
               console.log(response);
             })

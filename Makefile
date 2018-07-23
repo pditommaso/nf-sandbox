@@ -1,5 +1,5 @@
 run:
-	./gradlew 
+	./gradlew run 
 	
 hotreload:
 	./gradlew --continuous classes

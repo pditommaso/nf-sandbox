@@ -1,6 +1,6 @@
-# GA4GH SANDBOX
+# NF SANDBOX
 
-Sandbox for a [GA4GH](https://github.com/ga4gh/workflow-execution-service-schemas/) backend implementation.
+Sandbox for a [GA4GH](https://github.com/ga4gh/workflow-execution-service-schemas/) back-end implementation.
 
 Service model was generated using the following swagger definition:
 
@@ -43,4 +43,4 @@ The fun part is at these files:
 To automatically reload class, resources changes without having to stop, compile and relaunch
 the application use the command `make hotreload`, after `make run`.
 
-For details see [Micronaut eloading](https://docs.micronaut.io/latest/guide/index.html#reloading).
+For details see [Micronaut reloading](https://docs.micronaut.io/latest/guide/index.html#reloading).

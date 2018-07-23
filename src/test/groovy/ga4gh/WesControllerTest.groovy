@@ -50,6 +50,18 @@ class WesControllerTest extends Specification {
 
     }
 
+    def 'test wes post workflow with json' () {
+
+        when:
+        def req = '{"workflow_descriptor":"aa","workflow_params":"bbb","workflow_pype":"ccc","workflow_type_version":"dd", "key_values": {"foo":"xxx", "bar":"yyy"}}'
+
+        def resp = client.toBlocking().retrieve(HttpRequest.POST('/ga4gh/wes/v1/workflows', req), Ga4ghWesWorkflowRunId)
+        then:
+        resp instanceof Ga4ghWesWorkflowRunId
+        resp.getWorkflowId() == '7584'
+
+    }
+
 
     def 'test wes get workflow log' () {
 
