@@ -24,7 +24,7 @@ To run unit tests use
 To run the local server use:
 
 ```
-./gradlew run
+make run
 ```
 
 Default port is 8080. To change check the file `src/main/resources/application.groovy`
@@ -37,3 +37,10 @@ The fun part is at these files:
 ./src/test/groovy/ga4gh/WesControllerTest.groovy
 ```
 
+
+## Hot reloading
+
+To automatically reload class, resources changes without having to stop, compile and relaunch
+the application use the command `make hotreload`, after `make run`.
+
+For details see [Micronaut eloading](https://docs.micronaut.io/latest/guide/index.html#reloading).

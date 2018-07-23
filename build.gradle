@@ -49,5 +49,7 @@ shadowJar {
     mergeServiceFiles()
 }
 
+run.jvmArgs('-noverify', "-javaagent:${new File('misc/springloaded-1.2.8.RELEASE.jar').absolutePath}")
+
 
 mainClassName = "web.Application"

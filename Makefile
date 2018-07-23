@@ -1,2 +1,6 @@
 run:
-	./gradlew run
+	./gradlew 
+	
+hotreload:
+	./gradlew --continuous classes
+
