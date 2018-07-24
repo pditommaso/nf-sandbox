@@ -32,13 +32,13 @@ class WesController {
     /**
      * Retrieve a workflow instance status
      *
-     * @param workflowId
+     * @param workflow_id
      * @return
      */
-    @Get('/workflows/{workflowId}/status')
-    HttpResponse<Ga4ghWesWorkflowStatus> getWorkflowStatus(String workflowId) {
+    @Get('/workflows/{workflow_id}/status')
+    HttpResponse<Ga4ghWesWorkflowStatus> getWorkflowStatus(String workflow_id) {
         def resp = new Ga4ghWesWorkflowStatus()
-        resp.setWorkflowId(workflowId)
+        resp.setWorkflowId(workflow_id)
         resp.setState( Ga4ghWesState.COMPLETE )
         HttpResponse.created(resp)
     }
@@ -46,15 +46,15 @@ class WesController {
     /**
      * List all workflow instances
      *
-     * @param pageSize
-     * @param pageToken
-     * @param keyValueSearch
+     * @param page_size
+     * @param page_token
+     * @param key_value_search
      * @return
      */
     @Get('/workflows')
-    HttpResponse<Ga4ghWesWorkflowListResponse> listWorkflows(Long pageSize, String pageToken, String keyValueSearch) {
+    HttpResponse<Ga4ghWesWorkflowListResponse> listWorkflows(Long page_size, String page_token, String key_value_search) {
 
-        println "List page=$pageSize; token=$pageToken; key=$keyValueSearch"
+        println "List page=$page_size; token=$page_token; key=$key_value_search"
 
         def resp = new Ga4ghWesWorkflowListResponse()
 
@@ -73,13 +73,13 @@ class WesController {
     /**
      * Retrieve a workflow log
      *
-     * @param workflowId
+     * @param workflow_id
      * @return
      */
-    @Get("/workflows/{workflowId}")
-    HttpResponse<Ga4ghWesWorkflowLog> getWorkflowLog(String workflowId) {
+    @Get("/workflows/{workflow_id}")
+    HttpResponse<Ga4ghWesWorkflowLog> getWorkflowLog(String workflow_id) {
         def resp = new Ga4ghWesWorkflowLog()
-        resp.setWorkflowId(workflowId)
+        resp.setWorkflowId(workflow_id)
         resp.setState( Ga4ghWesState.RUNNING )
         HttpResponse.created(resp)
     }
@@ -99,13 +99,13 @@ class WesController {
     /**
      * Delete a workflow instance
      *
-     * @param workflowId
+     * @param workflow_id
      * @return
      */
-    @Delete("/workflows/{workflowId}")
-    HttpResponse<Ga4ghWesWorkflowRunId> cancelJob(String workflowId) {
+    @Delete("/workflows/{workflow_id}")
+    HttpResponse<Ga4ghWesWorkflowRunId> cancelJob(String workflow_id) {
         def resp = new Ga4ghWesWorkflowRunId()
-        resp.setWorkflowId(workflowId)
+        resp.setWorkflowId(workflow_id)
         HttpResponse.created(resp)
     }
 }

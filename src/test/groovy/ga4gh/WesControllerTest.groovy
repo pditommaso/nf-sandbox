@@ -84,7 +84,7 @@ class WesControllerTest extends Specification {
 
     def 'test wes list workflows' () {
         when:
-        def resp = client.toBlocking().retrieve(HttpRequest.GET('/ga4gh/wes/v1/workflows?pageSize=10&pageToken=20&keyValueSearch=foo'), Ga4ghWesWorkflowListResponse)
+        def resp = client.toBlocking().retrieve(HttpRequest.GET('/ga4gh/wes/v1/workflows?page_size=10&page_token=20&key_value_search=foo'), Ga4ghWesWorkflowListResponse)
         then:
         resp instanceof Ga4ghWesWorkflowListResponse
         resp.getWorkflows().size() == 2

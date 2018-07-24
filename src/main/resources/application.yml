@@ -5,7 +5,7 @@ micronaut:
       static:
           resources:
               enabled: true
-              mapping: /static/**
+              mapping: /a/**
               paths: classpath:public
 
 dataSource:

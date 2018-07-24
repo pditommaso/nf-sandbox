@@ -19,8 +19,8 @@ class HomeController {
         """
         <html><body>
         <h1>GA4GH Sandbox</h1>
-        <li><a href='/static/w-list.html'>List workflow</a></li>  
-        <li><a href='/static/w-run.html'>Create workflow</a></li>  
+        <li><a href='/a/w-list.html'>List workflow</a></li>  
+        <li><a href='/a/w-run.html'>Create workflow</a></li>  
         </body></html>
         """
         .stripIndent()

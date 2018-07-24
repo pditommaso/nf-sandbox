@@ -28,11 +28,11 @@ interface WesClient {
     @Get("/service-info")
     Ga4ghWesServiceInfo getServiceInfo()
 
-    @Get('/workflows/{workflowId}/status')
-    Ga4ghWesWorkflowStatus getWorkflowStatus(String workflowId)
+    @Get('/workflows/{workflow_id}/status')
+    Ga4ghWesWorkflowStatus getWorkflowStatus(String workflow_id)
 
-    @Get('/workflows?pageSize={pageSize}&pageToken={pageToken}&keyValueSearch={keyValueSearch}')
-    Ga4ghWesWorkflowListResponse listWorkflows(Long pageSize, String pageToken, String keyValueSearch)
+    @Get('/workflows?page_size={page_size}&page_token={page_token}&key_value_search={key_value_search}')
+    Ga4ghWesWorkflowListResponse listWorkflows(Long page_size, String page_token, String key_value_search)
 
     @Get("/workflows/{workflowId}")
     Ga4ghWesWorkflowLog getWorkflowLog(String workflowId)

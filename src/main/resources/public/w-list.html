@@ -39,7 +39,7 @@
       },
 
       created: function() {
-        axios.get('http://localhost:8080/ga4gh/wes/v1/workflows?pageSize=10&pageToken=0&keyValueSearch=')
+        axios.get('http://localhost:8080/ga4gh/wes/v1/workflows?page_size=10&page_token=0&key_value_search=')
           .then((response) => {
             this.workflows=response.data.workflows;
           });
